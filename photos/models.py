@@ -27,8 +27,13 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+    
     def save_category(self):
         self.save()
+        
+    @classmethod
+    def delete_category(cls, id):
+        return cls.objects.filter(id=id).delete()
 
 
 class Photo(models.Model):
