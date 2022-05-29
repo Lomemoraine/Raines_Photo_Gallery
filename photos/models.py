@@ -14,7 +14,7 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-    name = models.CharField(max_length=100, null=False, blank=False)
+    cat_name = models.CharField(max_length=100, null=False, blank=False)
 
     def __str__(self):
         return self.name
@@ -33,7 +33,7 @@ class Category(models.Model):
     
     @classmethod
     def update_category(cls,current_value,new_value):
-        fetched_object = Category.objects.filter(name=current_value).update(name=new_value)
+        fetched_object = Category.objects.filter(cat_name=current_value).update(cat_name=new_value)
         return fetched_object
 
     
