@@ -17,7 +17,7 @@ def get_category(request,category):
 def get_location(request,location):
     category_results = Category.objects.all()
     location_results = Location.objects.all()
-    location_result = Photo.objects.filter(image_location__location= location)
+    location_result = Photo.filter_by_location(location)
     return render(request,'index.html',{'all_images':location_result,'category_results':category_results,'location_results':location_results})
 
 def search_results(request):
