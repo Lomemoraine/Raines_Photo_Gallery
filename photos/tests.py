@@ -32,11 +32,11 @@ class CategoryTestClass(TestCase):
         categories =Category.objects.all()
         self.assertTrue(len(categories) == 0)
         
-    # def test_update_single_object_property(self):
-    #     self.category.save_category()
-    #     filtered_object =Category.update_category('Nature','CLOSE_UP')
-    #     fetched = Location.objects.get(cat_name='CLOSE_UP')
-    #     self.assertEqual(fetched.cat_name,'CLOSE_UP')
+    def test_update_single_object_property(self):
+        self.category.save_category()
+        filtered_object =Category.update_category('Nature','CLOSE_UP')
+        fetched = Category.objects.get(cat_name='CLOSE_UP')
+        self.assertEqual(fetched.cat_name,'CLOSE_UP')
         
 class LocationTestClass(TestCase):
     def setUp(self):

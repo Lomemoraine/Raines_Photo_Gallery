@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=K2D:wght@100&display=swap" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
    
 {% endblock %}
 
@@ -24,6 +25,13 @@
 <body>
   {% include "navbar.html" %}
     {% block content %} <h1 class='text-center'>Raines Gallery</h1> {%endblock%}
+    <footer class="page-footer font-small primary-color-dark bg-dark p-4">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center text-white py-3">© 2020 Copyright.<br>
+        <a href="https://github.com/Lomemoraine" class="text-white"> Raine</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
 
     {% block scripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

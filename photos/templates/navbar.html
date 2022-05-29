@@ -1,0 +1,39 @@
+
+    <nav class="navbar navbar-expand-lg bg-dark p-4">
+        <a class="navbar-brand" href="{% url 'gallery-home' %}"style="font-size:30px;color:white;font-weight:bold">RAINEGALLERY</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            
+                    
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="font-size:20px">
+                  Category
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {% for cat in category_results %}
+                  <a class="dropdown-item" href="/category/{{cat.cat_name}}">{{cat.cat_name}}</a>
+                  <div class="dropdown-divider"></div>
+
+                
+                {% endfor %}
+              </div>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="font-size:20px" >
+                  Locations
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {% for cat in location_results %}
+                  <a class="dropdown-item" href="/location/{{cat.location}}">{{cat.location}}</a>
+                  <div class="dropdown-divider"></div>
+
+                
+                {% endfor %}
+              </div>
+              </li>
+            </nav>

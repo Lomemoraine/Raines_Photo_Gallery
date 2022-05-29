@@ -17,7 +17,7 @@ class Category(models.Model):
     cat_name = models.CharField(max_length=100, null=False, blank=False)
 
     def __str__(self):
-        return self.name
+        return self.cat_name
     
     def save_category(self):
         '''method to save category instance
