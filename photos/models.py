@@ -54,3 +54,8 @@ class Photo(models.Model):
     @classmethod
     def get_image_by_id(cls, id):
         return cls.objects.filter(id=id).all()
+    
+    @classmethod
+    def search_image_by_category(cls, search_term):
+        album = cls.objects.filter(category_name__icontains=search_term)
+        return album
