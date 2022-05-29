@@ -31,6 +31,12 @@ class Category(models.Model):
         '''
         return cls.objects.filter(id=id).delete()
     
+    @classmethod
+    def update_category(cls,current_value,new_value):
+        fetched_object = Category.objects.filter(name=current_value).update(name=new_value)
+        return fetched_object
+
+    
 class Location(models.Model):
     """
         blueprint class for all location instances
@@ -52,6 +58,11 @@ class Location(models.Model):
         method to delete location instance
         '''
         return cls.objects.filter(id=id).delete()
+    
+    @classmethod
+    def update_location(cls,current_value,new_value):
+        fetched_object = Location.objects.filter(location=current_value).update(location=new_value)
+        return fetched_object
 
 
 
