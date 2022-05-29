@@ -28,6 +28,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 class Photo(models.Model):
     image = models.ImageField(upload_to = 'images/', blank=True, null=True)
     image_name = models.CharField(max_length =60)
@@ -39,3 +40,6 @@ class Photo(models.Model):
     def __str__(self):
         return self.image
     
+    @classmethod
+    def show_all_images(cls):
+        return cls.objects.order_by("pub_date")
