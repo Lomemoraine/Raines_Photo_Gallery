@@ -40,6 +40,8 @@ class Photo(models.Model):
     def __str__(self):
         return self.image
     
+    def save_image(self):
+        return self.save()
     @classmethod
     def show_all_images(cls):
-        return cls.objects.order_by("pub_date")
+        return cls.objects.order_by("image_category")
