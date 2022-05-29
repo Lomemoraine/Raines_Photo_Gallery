@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-dark p-4">
         <a class="navbar-brand" href="{% url 'gallery-home' %}"style="font-size:30px;color:white;font-weight:bold">RAINEGALLERY</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon bg-white"></span>
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -36,4 +36,11 @@
                 {% endfor %}
               </div>
               </li>
-            </nav>
+            </ul>
+               <!-- Adding a search form  -->
+               <form class="form-inline my-2 my-lg-0 " action="{% url 'search_results' %}">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search by cateory" name="searchItem" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"style="font-size:20px;color:black;font-weight:bold">Search</button>
+              </form>
+            </div>
+    </nav>

@@ -19,3 +19,16 @@ def get_location(request,location):
     location_results = Location.objects.all()
     location_result = Photo.objects.filter(image_location__location= location)
     return render(request,'index.html',{'all_images':location_result,'category_results':category_results,'location_results':location_results})
+
+def search_results(request):
+
+    if 'photo' in request.GET and request.GET["photo"]:
+        search_term = request.GET.get("photo")
+        searched_photos = Photo.search_image_by_category(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"photos": searched_photos})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
