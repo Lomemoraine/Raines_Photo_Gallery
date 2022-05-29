@@ -38,7 +38,7 @@ class Photo(models.Model):
 
     
     def __str__(self):
-        return self.image
+        return self.image_name
     
     def save_image(self):
         return self.save()
