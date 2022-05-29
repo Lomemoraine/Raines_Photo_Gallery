@@ -3,15 +3,6 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Location(models.Model):
-    """
-        blueprint class for all location instances
-    """
-
-    location = models.CharField(max_length=20, null=False, blank=False, default='Nairobi')
-
-    def __str__(self):
-        return self.location
 
 class Category(models.Model):
     """ 
@@ -29,11 +20,39 @@ class Category(models.Model):
         return self.name
     
     def save_category(self):
+        '''method to save category instance
+        '''
         self.save()
         
     @classmethod
     def delete_category(cls, id):
+        '''
+        method to delete category instance
+        '''
         return cls.objects.filter(id=id).delete()
+    
+class Location(models.Model):
+    """
+        blueprint class for all location instances
+    """
+
+    location = models.CharField(max_length=20, null=False, blank=False, default='Nairobi')
+
+    def __str__(self):
+        return self.location
+    
+    def save_location(self):
+        '''method to save location instance
+        '''
+        self.save()
+        
+    @classmethod
+    def delete_location(cls, id):
+        '''
+        method to delete location instance
+        '''
+        return cls.objects.filter(id=id).delete()
+
 
 
 class Photo(models.Model):

@@ -31,3 +31,32 @@ class CategoryTestClass(TestCase):
         Category.delete_category(self.category.id)
         categories =Category.objects.all()
         self.assertTrue(len(categories) == 0)
+        
+class LocationTestClass(TestCase):
+    def setUp(self):
+        '''
+        method to create an instance of location everytime the tests are run
+        '''
+        self.location = Location(location='Mombasa')
+        
+    def test_instance(self):
+        '''
+        method to check whether the instance created is actually of model Location
+        '''
+        self.assertTrue(isinstance(self.location, Location))
+        
+    def test_save_method(self):
+        '''
+        method to test if locations are being saved
+        '''
+        self.location.save_location()
+        location = Location.objects.all()
+        self.assertTrue(len(location) > 0)
+        
+    def test_delete_method(self):
+        '''
+        method to test whether location added can be deleted
+        '''
+        Location.delete_location(self.location.id)
+        locations =Category.objects.all()
+        self.assertTrue(len(locations) == 0)
