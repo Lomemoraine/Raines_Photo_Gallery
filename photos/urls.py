@@ -8,7 +8,8 @@ urlpatterns = [
     path('', views.gallery, name='gallery-home'),
     re_path(r'^location/(\w+)', views.get_location,name='get_location'),
     re_path(r'category/(\w+)', views.get_category,name='get_category'),
-    path(r'search/', views.search_results, name='search_results')
+    path(r'search/', views.search_results, name='search_results'),
+    path('imagedetails/<int:photo_id>', views.one_image, name='imagedetails'),
 
 ]
 if settings.DEBUG:

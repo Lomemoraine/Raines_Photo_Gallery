@@ -7,11 +7,16 @@
     {% for image in all_images %}
     <div class="col-md-3 col-sm-6">
       <div class="card" style="width: 18rem;">
-        <img src="{{image.image.url}}" alt="" >
+        <img src="{{image.image.url}}" data-bs-toggle="modal" type="button" data-bs-target="#pic{{image.id}}"alt="" >
         <h6 class="colored-font" >{{image.image_name}}</h6>
         <h5 class="card-title">Category: {{image.image_category}}</h5>
         <h5>Location: {{image.image_location}}</h5>
+
+        <!-- Modal -->
+					<div class="modal fade" id="pic{{image.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" style="">
+          </div>
       </div>
+      
     </div> 
     {% endfor %} 
 
