@@ -60,3 +60,8 @@ class LocationTestClass(TestCase):
         Location.delete_location(self.location.id)
         locations =Category.objects.all()
         self.assertTrue(len(locations) == 0)
+    def test_update_single_object_property(self):
+        self.location.save_location()
+        filtered_object =Location.update_location('Mombasa','Nairobi')
+        fetched = Location.objects.get(location='Nairobi')
+        self.assertEqual(fetched.location,'Nairobi')
