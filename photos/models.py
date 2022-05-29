@@ -42,6 +42,11 @@ class Photo(models.Model):
     
     def save_image(self):
         return self.save()
+    
     @classmethod
     def show_all_images(cls):
         return cls.objects.order_by("image_category")
+    
+    @classmethod
+    def delete_image(cls, id):
+        return cls.objects.filter(id=id).delete()
