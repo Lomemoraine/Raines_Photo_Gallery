@@ -1,5 +1,6 @@
 body{
     font-family: 'K2D', sans-serif;
+    background: #111 !important;
   }
 h1
 {
@@ -9,4 +10,13 @@ h1
   font-size: larger;
   font-weight: bolder;
   color: white;
+}
+.card {
+  background: #222;
+  border: 3px solid #dd2476;
+  color: rgba(250, 250, 250, 0.8);
+  margin-bottom: 2rem;
+}
+:root {
+  --gradient: linear-gradient(to left top, #DD2476 10%, #FF512F 90%) !important;
 }

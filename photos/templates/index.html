@@ -2,6 +2,20 @@
 {% block content %} 
 {{ block.super}}
 
+<div class="container-fluid mx-auto mt-4">
+  <div class="row">
+    {% for image in all_images %}
+    <div class="col-md-3 col-sm-6">
+      <div class="card" style="width: 18rem;">
+        <img src="{{image.image.url}}" alt="" >
+        <h6 class="colored-font" >{{image.image_name}}</h6>
+        <h5 class="card-title">Category: {{image.image_category}}</h5>
+        <h5>Location: {{image.image_location}}</h5>
+      </div>
+    </div> 
+    {% endfor %} 
 
+  </div>
+</div>
 
 {% endblock %}
