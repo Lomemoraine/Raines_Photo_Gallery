@@ -1,0 +1,30 @@
+{%extends 'base.html'%} 
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    {% if photos %}
+      <h2>Found {{ photos|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 photos for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+  {% if photos %}
+    {% for photo in photos %}
+    <div class="col-md-3 col-sm-6">
+        <div class="card" style="width: 18rem;">
+          <img src="{{photo.image.url}}" alt="" >
+          <h6 class="colored-font" >{{photo.image_name}}</h6>
+          <h5 class="card-title">Category: {{photo.image_category}}</h5>
+          <h5>Location: {{photo.image_location}}</h5>
+        </div>
+      </div> 
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+{% endblock %}

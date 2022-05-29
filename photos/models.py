@@ -94,7 +94,7 @@ class Photo(models.Model):
     
     @classmethod
     def search_image_by_category(cls, search_term):
-        album = cls.objects.filter(image_category__name__icontains=search_term)
+        album = cls.objects.filter(image_category__cat_name__icontains=search_term)
         return album
 
     @classmethod
