@@ -50,3 +50,7 @@ class Photo(models.Model):
     @classmethod
     def delete_image(cls, id):
         return cls.objects.filter(id=id).delete()
+    
+    @classmethod
+    def get_image_by_id(cls, id):
+        return cls.objects.filter(id=id).all()
