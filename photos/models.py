@@ -83,5 +83,15 @@ class Photo(models.Model):
     
     @classmethod
     def search_image_by_category(cls, search_term):
-        album = cls.objects.filter(category_name__icontains=search_term)
+        album = cls.objects.filter(image_category__name__icontains=search_term)
         return album
+
+    @classmethod
+    def update_image(cls,current_value,new_value):
+        fetched_object = Photo.objects.filter(image_name=current_value).update(image_name=new_value)
+        return fetched_object
+
+    @classmethod
+    def filter_by_location(cls,location):
+        filtered_result = cls.objects.filter(image_location__location__icontains=location)
+        return filtered_result
