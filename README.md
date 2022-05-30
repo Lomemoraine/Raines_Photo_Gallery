@@ -31,7 +31,7 @@ An django based  personal gallery application that a user displays their photos 
 
 #### Clone
 
-* git clone ``````
+* git clone ```https://github.com/Lomemoraine/Raines_Photo_Gallery.git```
 * cd Raine_Photos_Gallery
 * Open in your preferred IDE(Vs Code ,Pycharm,atom)
 ### Running the Application
