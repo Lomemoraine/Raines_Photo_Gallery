@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -67,7 +68,7 @@ class Location(models.Model):
 
 
 class Photo(models.Model):
-    image = models.ImageField(upload_to = 'images/', blank=True, null=True)
+    image = CloudinaryField('images/', default="", blank=True, null=True)
     image_name = models.CharField(max_length =60)
     image_description= models.TextField()
     image_location = models.ForeignKey(Location ,on_delete=models.CASCADE)
