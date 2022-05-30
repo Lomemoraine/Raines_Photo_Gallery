@@ -13,10 +13,21 @@ h1
 }
 .card {
   background: #222;
-  border: 3px solid #dd2476;
+  border: 1px solid black;
   color: rgba(250, 250, 250, 0.8);
   margin-bottom: 2rem;
 }
 :root {
   --gradient: linear-gradient(to left top, #DD2476 10%, #FF512F 90%) !important;
+}
+.image {
+  overflow: hidden;
+  
+  padding:1px;
+  flex: 0 1 1;
+ 
+}
+.image img{
+  max-width: 100%;
+      height: 100%;
 }

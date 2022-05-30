@@ -17,7 +17,9 @@
     {% for photo in photos %}
     <div class="col-md-3 col-sm-6">
         <div class="card" style="width: 18rem;">
+          <div class="image">
           <img src="{{photo.image.url}}" alt="" >
+          </div>
           <h6 class="colored-font" >{{photo.image_name}}</h6>
           <h5 class="card-title">Category: {{photo.image_category}}</h5>
           <h5>Location: {{photo.image_location}}</h5>
