@@ -1,7 +1,7 @@
 ### Raine_Photos_Gallery
 #### Description
 An django based  personal gallery application that a user displays their photos for others to see.
-![Landing page photo](https://github.com/Lomemoraine/Raine_Photo_Gallery/blob/master/media/images/project.png)
+![Landing page photo](https://github.com/Lomemoraine/Raines_Photo_Gallery/blob/master/media/images/project.png)
 ## Author
 
 * Lorraine Chepkemoi
